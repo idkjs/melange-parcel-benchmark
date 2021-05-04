@@ -1,0 +1,40 @@
+{
+  "name": "melange-parcel-benchmark",
+  "version": "1.0.0",
+  "description": "A benchmarking application for bucklescript",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esy bsb -make-world",
+    "re:watch": "esy bsb -make-world -w",
+    "re:clean": "esy bsb -clean-world",
+    "dev": "parcel src/index.html",
+    "postinstall": "esy",
+    "pack": "esbuild _build/default/src/Index.bs.js --bundle --outfile=src/index.js",
+    "start": "npm run build && npm run pack && npm run dev",
+    "deploy": "yarn build && gh-pages -d dist"
+  },
+  "author": "John",
+  "license": "MIT",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "bisect_ppx": "^2.6.0",
+    "gh-pages": "^3.1.0",
+    "parcel": "^2.0.0-beta.2",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "dependencies": {
+    "@rescript/std": "^9.1.0",
+    "esbuild": "^0.11.18",
+    "esy": "^0.6.10",
+    "immutable": "^4.0.0-rc.12",
+    "mori": "^0.3.2",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "reason-react": "0.9.1",
+    "rescript-vector": "0.1.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "melange-parcel-benchmark",
+  "namespace": true,
+  "version": "1.0",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "reason-react",
+    "rescript-vector",
+    "bisect_ppx"
+  ],
+  "bs-dev-dependencies": [],
+  "ppx-flags": [
+    "bisect_ppx/ppx"
+  ],
+  "external-stdlib" : "@rescript/std",
+  "warnings": {
+    "number": "+A-48-42",
+    "error": "+A-3-44-102"
+  },
+  "reason": {
+    "react-jsx": 3
+  }
+}

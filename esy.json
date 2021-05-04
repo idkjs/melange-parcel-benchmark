@@ -1,0 +1,12 @@
+{
+  "name": "melange-parcel-benchmark",
+  "dependencies": {
+    "@opam/bisect_ppx": "2.6.0",
+    "@opam/ocaml-lsp-server": "*",
+    "@rescript/std": "^9.1.0",
+    "melange": "melange-re/melange",
+    "ocaml": "4.12.x"
+  },
+  "esy": { "buildsInSource": "unsafe", "build": "bsb -make-world" },
+  "installConfig": { "pnp": false }
+}
