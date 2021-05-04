@@ -439,7 +439,7 @@
             }
           }
         }
-        var ReactElement = function(type, key, ref, self, source, owner, props) {
+        var ReactElement = function(type, key, ref, self2, source, owner, props) {
           var element = {
             $$typeof: REACT_ELEMENT_TYPE,
             type,
@@ -460,7 +460,7 @@
               configurable: false,
               enumerable: false,
               writable: false,
-              value: self
+              value: self2
             });
             Object.defineProperty(element, "_source", {
               configurable: false,
@@ -480,7 +480,7 @@
           var props = {};
           var key = null;
           var ref = null;
-          var self = null;
+          var self2 = null;
           var source = null;
           if (config != null) {
             if (hasValidRef(config)) {
@@ -492,7 +492,7 @@
             if (hasValidKey(config)) {
               key = "" + config.key;
             }
-            self = config.__self === void 0 ? null : config.__self;
+            self2 = config.__self === void 0 ? null : config.__self;
             source = config.__source === void 0 ? null : config.__source;
             for (propName in config) {
               if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
@@ -534,7 +534,7 @@
               }
             }
           }
-          return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
+          return ReactElement(type, key, ref, self2, source, ReactCurrentOwner.current, props);
         }
         function cloneAndReplaceKey(oldElement, newKey) {
           var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);
@@ -550,7 +550,7 @@
           var props = _assign({}, element.props);
           var key = element.key;
           var ref = element.ref;
-          var self = element._self;
+          var self2 = element._self;
           var source = element._source;
           var owner = element._owner;
           if (config != null) {
@@ -585,7 +585,7 @@
             }
             props.children = childArray;
           }
-          return ReactElement(element.type, key, ref, self, source, owner, props);
+          return ReactElement(element.type, key, ref, self2, source, owner, props);
         }
         function isValidElement(object) {
           return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
@@ -20548,7 +20548,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
 
-  // node_modules/@rescript/std/lib/js/caml_option.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/caml_option.js
   var require_caml_option = __commonJS((exports) => {
     "use strict";
     function isNested(x) {
@@ -20696,7 +20696,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.createElementVariadic = createElementVariadic;
   });
 
-  // node_modules/@rescript/std/lib/js/caml_sys.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/caml_sys.js
   var require_caml_sys = __commonJS((exports) => {
     "use strict";
     function caml_sys_getenv(s) {
@@ -20738,7 +20738,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       }
       return process.cwd();
     };
-    function caml_sys_get_argv(param) {
+    function caml_sys_executable_name(param) {
+      if (typeof process === "undefined") {
+        return "";
+      }
+      var argv = process.argv;
+      if (argv == null) {
+        return "";
+      } else {
+        return argv[0];
+      }
+    }
+    function caml_sys_argv(param) {
       if (typeof process === "undefined") {
         return [
           "",
@@ -20782,13 +20793,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.os_type = os_type;
     exports.caml_sys_system_command = caml_sys_system_command;
     exports.caml_sys_getcwd = caml_sys_getcwd;
-    exports.caml_sys_get_argv = caml_sys_get_argv;
+    exports.caml_sys_executable_name = caml_sys_executable_name;
+    exports.caml_sys_argv = caml_sys_argv;
     exports.caml_sys_exit = caml_sys_exit;
     exports.caml_sys_is_directory = caml_sys_is_directory;
     exports.caml_sys_file_exists = caml_sys_file_exists;
   });
 
-  // node_modules/@rescript/std/lib/js/caml_exceptions.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/caml_exceptions.js
   var require_caml_exceptions = __commonJS((exports) => {
     "use strict";
     var id = {
@@ -20814,12 +20826,46 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.caml_exn_slot_name = caml_exn_slot_name;
   });
 
-  // node_modules/@rescript/std/lib/js/sys.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/caml_external_polyfill.js
+  var require_caml_external_polyfill = __commonJS((exports) => {
+    "use strict";
+    var getGlobalThis = function() {
+      if (typeof globalThis !== "undefined")
+        return globalThis;
+      if (typeof self !== "undefined")
+        return self;
+      if (typeof window !== "undefined")
+        return window;
+      if (typeof global !== "undefined")
+        return global;
+      if (typeof this !== "undefined")
+        return this;
+      throw new Error("Unable to locate global `this`");
+    };
+    var resolve = function(s) {
+      var myGlobal = getGlobalThis();
+      if (myGlobal[s] === void 0) {
+        throw new Error(s + " not polyfilled by ReScript yet\n");
+      }
+      return myGlobal[s];
+    };
+    var register = function(s, fn) {
+      var myGlobal = getGlobalThis();
+      myGlobal[s] = fn;
+      return 0;
+    };
+    exports.getGlobalThis = getGlobalThis;
+    exports.resolve = resolve;
+    exports.register = register;
+  });
+
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/sys.js
   var require_sys = __commonJS((exports) => {
     "use strict";
     var Caml_sys = require_caml_sys();
     var Caml_exceptions = require_caml_exceptions();
-    var match = Caml_sys.caml_sys_get_argv(void 0);
+    var Caml_external_polyfill = require_caml_external_polyfill();
+    var executable_name = Caml_sys.caml_sys_executable_name(void 0);
     var os_type = Caml_sys.os_type(void 0);
     var backend_type = {
       _0: "BS"
@@ -20841,18 +20887,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     var Break = /* @__PURE__ */ Caml_exceptions.create("Sys.Break");
     function catch_break(on) {
     }
-    function enable_runtime_warnings(param) {
+    function Make(Immediate, Non_immediate) {
+      var repr = 1;
+      return {
+        repr
+      };
     }
-    function runtime_warnings_enabled(param) {
-      return false;
-    }
-    var argv = match[1];
-    var executable_name = match[0];
+    var Immediate64 = {
+      Make
+    };
     var cygwin = false;
     var word_size = 32;
     var int_size = 32;
     var max_string_length = 2147483647;
     var max_array_length = 2147483647;
+    var max_floatarray_length = 2147483647;
     var sigabrt = -1;
     var sigalrm = -2;
     var sigfpe = -3;
@@ -20881,8 +20930,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     var sigurg = -26;
     var sigxcpu = -27;
     var sigxfsz = -28;
-    var ocaml_version = "4.06.2+BS";
-    exports.argv = argv;
+    var ocaml_version = "4.12.0+BS";
+    function enable_runtime_warnings(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_enable_runtime_warnings")(prim);
+    }
+    function runtime_warnings_enabled(prim) {
+      return Caml_external_polyfill.resolve("caml_ml_runtime_warnings_enabled")(prim);
+    }
     exports.executable_name = executable_name;
     exports.getenv_opt = getenv_opt;
     exports.interactive = interactive;
@@ -20896,6 +20950,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.big_endian = big_endian;
     exports.max_string_length = max_string_length;
     exports.max_array_length = max_array_length;
+    exports.max_floatarray_length = max_floatarray_length;
     exports.set_signal = set_signal;
     exports.sigabrt = sigabrt;
     exports.sigalrm = sigalrm;
@@ -20930,9 +20985,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.ocaml_version = ocaml_version;
     exports.enable_runtime_warnings = enable_runtime_warnings;
     exports.runtime_warnings_enabled = runtime_warnings_enabled;
+    exports.Immediate64 = Immediate64;
   });
 
-  // node_modules/@rescript/std/lib/js/caml.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/caml.js
   var require_caml = __commonJS((exports) => {
     "use strict";
     function caml_int_compare(x, y) {
@@ -21123,7 +21179,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.i64_max = i64_max;
   });
 
-  // node_modules/@rescript/std/lib/js/caml_array.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/caml_array.js
   var require_caml_array = __commonJS((exports) => {
     "use strict";
     function sub(x, offset, len2) {
@@ -21238,7 +21294,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.set = set;
   });
 
-  // node_modules/@rescript/std/lib/js/curry.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/curry.js
   var require_curry = __commonJS((exports) => {
     "use strict";
     var Caml_array = require_caml_array();
@@ -21747,7 +21803,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.__8 = __8;
   });
 
-  // node_modules/@rescript/std/lib/js/js_dict.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/js_dict.js
   var require_js_dict = __commonJS((exports) => {
     "use strict";
     var Caml_option = require_caml_option();
@@ -21824,7 +21880,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.map = map;
   });
 
-  // node_modules/@rescript/std/lib/js/js_int.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/js_int.js
   var require_js_int = __commonJS((exports) => {
     "use strict";
     function equal(x, y) {
@@ -21837,7 +21893,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.min = min;
   });
 
-  // node_modules/@rescript/std/lib/js/js_math.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/js_math.js
   var require_js_math = __commonJS((exports) => {
     "use strict";
     var Js_int = require_js_int();
@@ -21879,7 +21935,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.random_int = random_int;
   });
 
-  // node_modules/@rescript/std/lib/js/belt_Array.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/belt_Array.js
   var require_belt_Array = __commonJS((exports) => {
     "use strict";
     var Caml = require_caml();
@@ -22552,7 +22608,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.eq = eq;
   });
 
-  // node_modules/@rescript/std/lib/js/belt_SortArray.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/belt_SortArray.js
   var require_belt_SortArray = __commonJS((exports) => {
     "use strict";
     var Curry = require_curry();
@@ -22943,10 +22999,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     function binarySearchBy(sorted, key, cmp) {
       return binarySearchByU(sorted, key, Curry.__2(cmp));
     }
-    var Int;
-    var $$String;
-    exports.Int = Int;
-    exports.$$String = $$String;
     exports.strictlySortedLengthU = strictlySortedLengthU;
     exports.strictlySortedLength = strictlySortedLength;
     exports.isSortedU = isSortedU;
@@ -22965,7 +23017,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     exports.diff = diff;
   });
 
-  // node_modules/@rescript/std/lib/js/belt_List.js
+  // ../../.esy/3/b/melange-388c5d45/default/lib/js/belt_List.js
   var require_belt_List = __commonJS((exports) => {
     "use strict";
     var Curry = require_curry();
@@ -23673,7 +23725,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (len === 1) {
         return xs[0];
       }
-      if (len === 0) {
+      if (!len) {
         return 0;
       }
       var len$1 = xs.length;
@@ -42161,16 +42213,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     var Belt_Array = require_belt_Array();
     var Caml_option = require_caml_option();
     var ReasonReactRouter = require_ReasonReactRouter_bs();
-    var Suites$BenchmarkBs = require_Suites_bs();
+    var Suites$MelangeParcelBenchmark = require_Suites_bs();
     function toString(suite) {
       if (suite) {
-        return Suites$BenchmarkBs.Routes.map(suite._0).url;
+        return Suites$MelangeParcelBenchmark.Routes.map(suite._0).url;
       } else {
         return "";
       }
     }
     function fromString(s) {
-      var suite = Suites$BenchmarkBs.Routes.fromUrl(s);
+      var suite = Suites$MelangeParcelBenchmark.Routes.fromUrl(s);
       if (suite !== void 0) {
         return {
           _0: Caml_option.valFromOption(suite)
@@ -42181,12 +42233,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
     function name(suite) {
       if (suite) {
-        return Suites$BenchmarkBs.Routes.map(suite._0).suite.name;
+        return Suites$MelangeParcelBenchmark.Routes.map(suite._0).suite.name;
       } else {
         return "Index";
       }
     }
-    var menu = Belt_Array.map(Suites$BenchmarkBs.Routes.routes, function(a) {
+    var menu = Belt_Array.map(Suites$MelangeParcelBenchmark.Routes.routes, function(a) {
       return {
         _0: a
       };
@@ -42229,8 +42281,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     var Belt_List = require_belt_List();
     var Benchmark = require_benchmark();
     var Belt_Array = require_belt_Array();
-    var Router$BenchmarkBs = require_Router_bs();
-    var Suites$BenchmarkBs = require_Suites_bs();
+    var Router$MelangeParcelBenchmark = require_Router_bs();
+    var Suites$MelangeParcelBenchmark = require_Suites_bs();
     var prefix = "rescript-vector";
     function set(title) {
       document.setTitle = prefix + (" - " + title);
@@ -42494,19 +42546,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       }));
     }
     function App(Props) {
-      var url = Router$BenchmarkBs.useUrl(void 0);
+      var url = Router$MelangeParcelBenchmark.useUrl(void 0);
       React2.useEffect(function() {
         document.setTitle = prefix;
       }, []);
       var tmp;
       if (url) {
-        var match = Suites$BenchmarkBs.Routes.map(url._0).suite;
+        var match = Suites$MelangeParcelBenchmark.Routes.map(url._0).suite;
         var suite = new Benchmark.Suite(match.name);
-        tmp = React2.createElement(React2.Fragment, void 0, React2.createElement(Router$BenchmarkBs.HashLink.make, {
+        tmp = React2.createElement(React2.Fragment, void 0, React2.createElement(Router$MelangeParcelBenchmark.HashLink.make, {
           children: null,
           to_: 0,
           className: "go-home"
-        }, "\u2190", Router$BenchmarkBs.name(0)), React2.createElement(App$Wrapper, {
+        }, "\u2190", Router$MelangeParcelBenchmark.name(0)), React2.createElement(App$Wrapper, {
           benchmarks: match.benchmarks,
           setup: match.setup,
           suite
@@ -42516,12 +42568,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           className: "index-header"
         }, "The benchmarks"), React2.createElement("ul", {
           className: "menu"
-        }, Belt_Array.map(Router$BenchmarkBs.menu, function(route) {
+        }, Belt_Array.map(Router$MelangeParcelBenchmark.menu, function(route) {
           return React2.createElement("li", {
-            key: Router$BenchmarkBs.toString(route),
+            key: Router$MelangeParcelBenchmark.toString(route),
             className: "menu__item"
-          }, React2.createElement(Router$BenchmarkBs.HashLink.make, {
-            children: Router$BenchmarkBs.name(route),
+          }, React2.createElement(Router$MelangeParcelBenchmark.HashLink.make, {
+            children: Router$MelangeParcelBenchmark.name(route),
             to_: route
           }));
         })));
@@ -42532,7 +42584,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         className: "main "
       }, React2.createElement("header", void 0, React2.createElement("p", {
         className: "site-title"
-      }, React2.createElement(Router$BenchmarkBs.HashLink.make, {
+      }, React2.createElement(Router$MelangeParcelBenchmark.HashLink.make, {
         children: "rescript-vector",
         to_: 0,
         className: "site-title__link"
@@ -42546,8 +42598,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   "use strict";
   var React = require_react();
   var ReactDOMRe = require_ReactDOMRe_bs();
-  var App$BenchmarkBs = require_App_bs();
-  ReactDOMRe.renderToElementWithId(React.createElement(App$BenchmarkBs.make, {}), "root");
+  var App$MelangeParcelBenchmark = require_App_bs();
+  ReactDOMRe.renderToElementWithId(React.createElement(App$MelangeParcelBenchmark.make, {}), "root");
 })();
 /*
 object-assign

@@ -11,7 +11,7 @@
 (targets  React.cmj React.cmi React.cmt React.bs.js)
  (mode (promote (until-clean) (only React.bs.js)))(deps (:inputs  React.ast)  (:ast_deps .././src/React.ast ) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o React.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o React.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReactDOM.ast)
@@ -23,7 +23,7 @@
 (targets  ReactDOM.cmj ReactDOM.cmi ReactDOM.cmt ReactDOM.bs.js)
  (mode (promote (until-clean) (only ReactDOM.bs.js)))(deps (:inputs  ReactDOM.ast)  (:ast_deps .././src/ReactDOM.ast ) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactDOM.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o ReactDOM.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReactEvent.ast)
@@ -47,7 +47,7 @@
 (targets  ReactEvent.cmj ReactEvent.cmt ReactEvent.bs.js)
  (mode (promote (until-clean) (only ReactEvent.bs.js)))(deps (:inputs  ReactEvent.ast)  ReactEvent.cmi (:ast_deps .././src/ReactEvent.ast .././src/ReactEvent.iast) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactEvent.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o ReactEvent.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReactDOMStyle.ast)
@@ -59,7 +59,7 @@
 (targets  ReactDOMStyle.cmj ReactDOMStyle.cmi ReactDOMStyle.cmt ReactDOMStyle.bs.js)
  (mode (promote (until-clean) (only ReactDOMStyle.bs.js)))(deps (:inputs  ReactDOMStyle.ast)  (:ast_deps .././src/ReactDOMStyle.ast ) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactDOMStyle.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o ReactDOMStyle.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReactDOMServer.ast)
@@ -71,7 +71,7 @@
 (targets  ReactDOMServer.cmj ReactDOMServer.cmi ReactDOMServer.cmt ReactDOMServer.bs.js)
  (mode (promote (until-clean) (only ReactDOMServer.bs.js)))(deps (:inputs  ReactDOMServer.ast)  (:ast_deps .././src/ReactDOMServer.ast ) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactDOMServer.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o ReactDOMServer.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReactTestUtils.ast)
@@ -95,7 +95,7 @@
 (targets  ReactTestUtils.cmj ReactTestUtils.cmt ReactTestUtils.bs.js)
  (mode (promote (until-clean) (only ReactTestUtils.bs.js)))(deps (:inputs  ReactTestUtils.ast)  ReactTestUtils.cmi (:ast_deps .././src/ReactTestUtils.ast .././src/ReactTestUtils.iast) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactTestUtils.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o ReactTestUtils.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReasonReactRouter.ast)
@@ -119,7 +119,7 @@
 (targets  ReasonReactRouter.cmj ReasonReactRouter.cmt ReasonReactRouter.bs.js)
  (mode (promote (until-clean) (only ReasonReactRouter.bs.js)))(deps (:inputs  ReasonReactRouter.ast)  ReasonReactRouter.cmi (:ast_deps .././src/ReasonReactRouter.ast .././src/ReasonReactRouter.iast) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReasonReactRouter.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o ReasonReactRouter.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReasonReactErrorBoundary.ast)
@@ -143,7 +143,7 @@
 (targets  ReasonReactErrorBoundary.cmj ReasonReactErrorBoundary.cmt ReasonReactErrorBoundary.bs.js)
  (mode (promote (until-clean) (only ReasonReactErrorBoundary.bs.js)))(deps (:inputs  ReasonReactErrorBoundary.ast)  ReasonReactErrorBoundary.cmi (:ast_deps .././src/ReasonReactErrorBoundary.ast .././src/ReasonReactErrorBoundary.iast) ../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReasonReactErrorBoundary.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I ./legacy -I .    -w a -bs-package-name reason-react -bs-package-output commonjs:./src:.bs.js -o ReasonReactErrorBoundary.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  
 (alias (name bsb_world)(deps  ReasonReactErrorBoundary.bs.js ReasonReactRouter.bs.js ReactTestUtils.bs.js ReactDOMServer.bs.js ReactDOMStyle.bs.js ReactEvent.bs.js ReactDOM.bs.js React.bs.js)
@@ -159,7 +159,7 @@
 (targets  ReactDOMRe.cmj ReactDOMRe.cmi ReactDOMRe.cmt ReactDOMRe.bs.js)
  (mode (promote (until-clean) (only ReactDOMRe.bs.js)))(deps (:inputs  ReactDOMRe.ast)  (:ast_deps ../.././src/legacy/ReactDOMRe.ast ) ../../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactDOMRe.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -o ReactDOMRe.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReasonReact.ast)
@@ -183,7 +183,7 @@
 (targets  ReasonReact.cmj ReasonReact.cmt ReasonReact.bs.js)
  (mode (promote (until-clean) (only ReasonReact.bs.js)))(deps (:inputs  ReasonReact.ast)  ReasonReact.cmi (:ast_deps ../.././src/legacy/ReasonReact.ast ../.././src/legacy/ReasonReact.iast) ../../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReasonReact.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -o ReasonReact.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReactEventRe.ast)
@@ -207,7 +207,7 @@
 (targets  ReactEventRe.cmj ReactEventRe.cmt ReactEventRe.bs.js)
  (mode (promote (until-clean) (only ReactEventRe.bs.js)))(deps (:inputs  ReactEventRe.ast)  ReactEventRe.cmi (:ast_deps ../.././src/legacy/ReactEventRe.ast ../.././src/legacy/ReactEventRe.iast) ../../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactEventRe.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -o ReactEventRe.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReactDOMServerRe.ast)
@@ -219,7 +219,7 @@
 (targets  ReactDOMServerRe.cmj ReactDOMServerRe.cmi ReactDOMServerRe.cmt ReactDOMServerRe.bs.js)
  (mode (promote (until-clean) (only ReactDOMServerRe.bs.js)))(deps (:inputs  ReactDOMServerRe.ast)  (:ast_deps ../.././src/legacy/ReactDOMServerRe.ast ) ../../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReactDOMServerRe.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -o ReactDOMServerRe.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReasonReactCompat.ast)
@@ -243,7 +243,7 @@
 (targets  ReasonReactCompat.cmj ReasonReactCompat.cmt ReasonReactCompat.bs.js)
  (mode (promote (until-clean) (only ReasonReactCompat.bs.js)))(deps (:inputs  ReasonReactCompat.ast)  ReasonReactCompat.cmi (:ast_deps ../.././src/legacy/ReasonReactCompat.ast ../.././src/legacy/ReasonReactCompat.iast) ../../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReasonReactCompat.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-read-cmi -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -o ReasonReactCompat.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ReasonReactOptimizedCreateClass.ast)
@@ -255,7 +255,7 @@
 (targets  ReasonReactOptimizedCreateClass.cmj ReasonReactOptimizedCreateClass.cmi ReasonReactOptimizedCreateClass.cmt ReasonReactOptimizedCreateClass.bs.js)
  (mode (promote (until-clean) (only ReasonReactOptimizedCreateClass.bs.js)))(deps (:inputs  ReasonReactOptimizedCreateClass.ast)  (:ast_deps ../.././src/legacy/ReasonReactOptimizedCreateClass.ast ) ../../bsconfig.json)
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ReasonReactOptimizedCreateClass.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/reason-react -cwd ./src/legacy %{ast_deps}) (run bsc -bs-re-out -I . -I ..    -w a -bs-package-name reason-react -bs-package-output commonjs:./src/legacy:.bs.js -o ReasonReactOptimizedCreateClass.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  
 (alias (name bsb_world)(deps  ReasonReactOptimizedCreateClass.bs.js ReasonReactCompat.bs.js ReactDOMServerRe.bs.js ReactEventRe.bs.js ReasonReact.bs.js ReactDOMRe.bs.js)
@@ -276,7 +276,7 @@
 (targets  jest-Bisect.cmj jest-Bisect.cmi jest-Bisect.cmt jest.bs.js)
  (mode (promote (until-clean) (only jest.bs.js)))(deps (:inputs  jest.ast)  (:ast_deps ../../.././src/runtime/bucklescript/jest.ast ) ../../../bsconfig.json ../../../.melange.eobjs/Bisect.cmi)
 (action
- (progn (dynamic-run bsb_helper -bs-ns Bisect -root /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx -cwd ./src/runtime/bucklescript %{ast_deps}) (run bsc -bs-ns Bisect -I ../../common -I . -I ../../../.melange.eobjs   -w a -bs-package-name bisect_ppx -bs-package-output commonjs:./src/runtime/bucklescript:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o jest-Bisect.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns Bisect -root /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx -cwd ./src/runtime/bucklescript %{ast_deps}) (run bsc -bs-ns Bisect -I ../../common -I . -I ../../../.melange.eobjs   -w a -bs-package-name bisect_ppx -bs-package-output commonjs:./src/runtime/bucklescript:.bs.js -o jest-Bisect.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  runtime.ast)
@@ -300,7 +300,7 @@
 (targets  runtime-Bisect.cmj runtime-Bisect.cmt runtime.bs.js)
  (mode (promote (until-clean) (only runtime.bs.js)))(deps (:inputs  runtime.ast)  runtime-Bisect.cmi (:ast_deps ../../.././src/runtime/bucklescript/runtime.ast ../../.././src/runtime/bucklescript/runtime.iast) ../../../bsconfig.json ../../../.melange.eobjs/Bisect.cmi)
 (action
- (progn (dynamic-run bsb_helper -bs-ns Bisect -root /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx -cwd ./src/runtime/bucklescript %{ast_deps}) (run bsc -bs-ns Bisect -bs-read-cmi -I ../../common -I . -I ../../../.melange.eobjs   -w a -bs-package-name bisect_ppx -bs-package-output commonjs:./src/runtime/bucklescript:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o runtime-Bisect.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns Bisect -root /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx -cwd ./src/runtime/bucklescript %{ast_deps}) (run bsc -bs-ns Bisect -bs-read-cmi -I ../../common -I . -I ../../../.melange.eobjs   -w a -bs-package-name bisect_ppx -bs-package-output commonjs:./src/runtime/bucklescript:.bs.js -o runtime-Bisect.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  
 (alias (name bsb_world)(deps  runtime.bs.js jest.bs.js)
@@ -328,7 +328,7 @@
 (targets  bisect_common-Bisect.cmj bisect_common-Bisect.cmt bisect_common.bs.js)
  (mode (promote (until-clean) (only bisect_common.bs.js)))(deps (:inputs  bisect_common.ast)  bisect_common-Bisect.cmi (:ast_deps ../.././src/common/bisect_common.ast ../.././src/common/bisect_common.iast) ../../bsconfig.json ../../.melange.eobjs/Bisect.cmi)
 (action
- (progn (dynamic-run bsb_helper -bs-ns Bisect -root /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx -cwd ./src/common %{ast_deps}) (run bsc -bs-ns Bisect -bs-read-cmi -I . -I ../runtime/bucklescript -I ../../.melange.eobjs   -w a -bs-package-name bisect_ppx -bs-package-output commonjs:./src/common:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o bisect_common-Bisect.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns Bisect -root /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx -cwd ./src/common %{ast_deps}) (run bsc -bs-ns Bisect -bs-read-cmi -I . -I ../runtime/bucklescript -I ../../.melange.eobjs   -w a -bs-package-name bisect_ppx -bs-package-output commonjs:./src/common:.bs.js -o bisect_common-Bisect.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  
 (alias (name bsb_world)(deps  bisect_common.bs.js)
@@ -366,7 +366,7 @@
 (targets  Vector.cmj Vector.cmt Vector.bs.js)
  (mode (promote (until-clean) (only Vector.bs.js)))(deps (:inputs  Vector.ast)  Vector.cmi (:ast_deps .././src/Vector.ast .././src/Vector.iast) ../bsconfig.json(alias ../../bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../../bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/rescript-vector -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -I . -I ../../bisect_ppx/.melange.eobjs -I ../../bisect_ppx/src/runtime/bucklescript -I ../../bisect_ppx/src/common   -w a -bs-package-name rescript-vector -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o Vector.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/vector-benchmark/node_modules/rescript-vector -cwd ./src %{ast_deps}) (run bsc -bs-read-cmi -I . -I ../../bisect_ppx/.melange.eobjs -I ../../bisect_ppx/src/runtime/bucklescript -I ../../bisect_ppx/src/common   -w a -bs-package-name rescript-vector -bs-package-output commonjs:./src:.bs.js -o Vector.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  
 (alias (name bsb_world)(deps  Vector.bs.js)
@@ -390,16 +390,16 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  App-BenchmarkBs.cmi App-BenchmarkBs.cmti)
- (deps (:inputs  App.iast)  (:ast_deps .././src/App.ast .././src/App.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  App-MelangeParcelBenchmark.cmi App-MelangeParcelBenchmark.cmti)
+ (deps (:inputs  App.iast)  (:ast_deps .././src/App.ast .././src/App.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o App-BenchmarkBs.cmi %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o App-MelangeParcelBenchmark.cmi %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  App-BenchmarkBs.cmj App-BenchmarkBs.cmt App.bs.js)
- (mode (promote (until-clean) (only App.bs.js)))(deps (:inputs  App.ast)  App-BenchmarkBs.cmi (:ast_deps .././src/App.ast .././src/App.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  App-MelangeParcelBenchmark.cmj App-MelangeParcelBenchmark.cmt App.bs.js)
+ (mode (promote (until-clean) (only App.bs.js)))(deps (:inputs  App.ast)  App-MelangeParcelBenchmark.cmi (:ast_deps .././src/App.ast .././src/App.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o App-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o App-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  Mori.ast)
@@ -408,10 +408,10 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Mori-BenchmarkBs.cmj Mori-BenchmarkBs.cmi Mori-BenchmarkBs.cmt Mori.bs.js)
- (mode (promote (until-clean) (only Mori.bs.js)))(deps (:inputs  Mori.ast)  (:ast_deps .././src/Mori.ast ) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Mori-MelangeParcelBenchmark.cmj Mori-MelangeParcelBenchmark.cmi Mori-MelangeParcelBenchmark.cmt Mori.bs.js)
+ (mode (promote (until-clean) (only Mori.bs.js)))(deps (:inputs  Mori.ast)  (:ast_deps .././src/Mori.ast ) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o Mori-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o Mori-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  Index.ast)
@@ -420,10 +420,10 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Index-BenchmarkBs.cmj Index-BenchmarkBs.cmi Index-BenchmarkBs.cmt Index.bs.js)
- (mode (promote (until-clean) (only Index.bs.js)))(deps (:inputs  Index.ast)  (:ast_deps .././src/Index.ast ) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Index-MelangeParcelBenchmark.cmj Index-MelangeParcelBenchmark.cmi Index-MelangeParcelBenchmark.cmt Index.bs.js)
+ (mode (promote (until-clean) (only Index.bs.js)))(deps (:inputs  Index.ast)  (:ast_deps .././src/Index.ast ) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o Index-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o Index-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  Pages.ast)
@@ -438,16 +438,16 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Pages-BenchmarkBs.cmi Pages-BenchmarkBs.cmti)
- (deps (:inputs  Pages.iast)  (:ast_deps .././src/Pages.ast .././src/Pages.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Pages-MelangeParcelBenchmark.cmi Pages-MelangeParcelBenchmark.cmti)
+ (deps (:inputs  Pages.iast)  (:ast_deps .././src/Pages.ast .././src/Pages.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o Pages-BenchmarkBs.cmi %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o Pages-MelangeParcelBenchmark.cmi %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Pages-BenchmarkBs.cmj Pages-BenchmarkBs.cmt Pages.bs.js)
- (mode (promote (until-clean) (only Pages.bs.js)))(deps (:inputs  Pages.ast)  Pages-BenchmarkBs.cmi (:ast_deps .././src/Pages.ast .././src/Pages.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Pages-MelangeParcelBenchmark.cmj Pages-MelangeParcelBenchmark.cmt Pages.bs.js)
+ (mode (promote (until-clean) (only Pages.bs.js)))(deps (:inputs  Pages.ast)  Pages-MelangeParcelBenchmark.cmi (:ast_deps .././src/Pages.ast .././src/Pages.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o Pages-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o Pages-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  Router.ast)
@@ -462,16 +462,16 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Router-BenchmarkBs.cmi Router-BenchmarkBs.cmti)
- (deps (:inputs  Router.iast)  (:ast_deps .././src/Router.ast .././src/Router.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Router-MelangeParcelBenchmark.cmi Router-MelangeParcelBenchmark.cmti)
+ (deps (:inputs  Router.iast)  (:ast_deps .././src/Router.ast .././src/Router.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o Router-BenchmarkBs.cmi %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o Router-MelangeParcelBenchmark.cmi %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Router-BenchmarkBs.cmj Router-BenchmarkBs.cmt Router.bs.js)
- (mode (promote (until-clean) (only Router.bs.js)))(deps (:inputs  Router.ast)  Router-BenchmarkBs.cmi (:ast_deps .././src/Router.ast .././src/Router.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Router-MelangeParcelBenchmark.cmj Router-MelangeParcelBenchmark.cmt Router.bs.js)
+ (mode (promote (until-clean) (only Router.bs.js)))(deps (:inputs  Router.ast)  Router-MelangeParcelBenchmark.cmi (:ast_deps .././src/Router.ast .././src/Router.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o Router-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o Router-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  Suites.ast)
@@ -486,16 +486,16 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Suites-BenchmarkBs.cmi Suites-BenchmarkBs.cmti)
- (deps (:inputs  Suites.iast)  (:ast_deps .././src/Suites.ast .././src/Suites.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Suites-MelangeParcelBenchmark.cmi Suites-MelangeParcelBenchmark.cmti)
+ (deps (:inputs  Suites.iast)  (:ast_deps .././src/Suites.ast .././src/Suites.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o Suites-BenchmarkBs.cmi %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -o Suites-MelangeParcelBenchmark.cmi %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  Suites-BenchmarkBs.cmj Suites-BenchmarkBs.cmt Suites.bs.js)
- (mode (promote (until-clean) (only Suites.bs.js)))(deps (:inputs  Suites.ast)  Suites-BenchmarkBs.cmi (:ast_deps .././src/Suites.ast .././src/Suites.iast) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  Suites-MelangeParcelBenchmark.cmj Suites-MelangeParcelBenchmark.cmt Suites.bs.js)
+ (mode (promote (until-clean) (only Suites.bs.js)))(deps (:inputs  Suites.ast)  Suites-MelangeParcelBenchmark.cmi (:ast_deps .././src/Suites.ast .././src/Suites.iast) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o Suites-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-read-cmi -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o Suites-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  BenchmarkJs.ast)
@@ -504,10 +504,10 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  BenchmarkJs-BenchmarkBs.cmj BenchmarkJs-BenchmarkBs.cmi BenchmarkJs-BenchmarkBs.cmt BenchmarkJs.bs.js)
- (mode (promote (until-clean) (only BenchmarkJs.bs.js)))(deps (:inputs  BenchmarkJs.ast)  (:ast_deps .././src/BenchmarkJs.ast ) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  BenchmarkJs-MelangeParcelBenchmark.cmj BenchmarkJs-MelangeParcelBenchmark.cmi BenchmarkJs-MelangeParcelBenchmark.cmt BenchmarkJs.bs.js)
+ (mode (promote (until-clean) (only BenchmarkJs.bs.js)))(deps (:inputs  BenchmarkJs.ast)  (:ast_deps .././src/BenchmarkJs.ast ) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o BenchmarkJs-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o BenchmarkJs-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
 (targets  ImmutableJs.ast)
@@ -516,18 +516,18 @@
  (run bsc  -w a -ppx /Users/mando/Github/vector-benchmark/node_modules/bisect_ppx/ppx -bs-jsx 3  -absname -bs-ast -o %{targets} %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  (rule
-(targets  ImmutableJs-BenchmarkBs.cmj ImmutableJs-BenchmarkBs.cmi ImmutableJs-BenchmarkBs.cmt ImmutableJs.bs.js)
- (mode (promote (until-clean) (only ImmutableJs.bs.js)))(deps (:inputs  ImmutableJs.ast)  (:ast_deps .././src/ImmutableJs.ast ) ../bsconfig.json ../.melange.eobjs/BenchmarkBs.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
+(targets  ImmutableJs-MelangeParcelBenchmark.cmj ImmutableJs-MelangeParcelBenchmark.cmi ImmutableJs-MelangeParcelBenchmark.cmt ImmutableJs.bs.js)
+ (mode (promote (until-clean) (only ImmutableJs.bs.js)))(deps (:inputs  ImmutableJs.ast)  (:ast_deps .././src/ImmutableJs.ast ) ../bsconfig.json ../.melange.eobjs/MelangeParcelBenchmark.cmi(alias ../node_modules/reason-react/src/bsb_world)(alias ../node_modules/reason-react/src/legacy/bsb_world)(alias ../node_modules/rescript-vector/src/bsb_world)(alias ../node_modules/bisect_ppx/src/runtime/bucklescript/bsb_world)(alias ../node_modules/bisect_ppx/src/common/bsb_world))
 (action
- (progn (dynamic-run bsb_helper -bs-ns BenchmarkBs -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns BenchmarkBs -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name benchmark-bs -bs-package-output commonjs:./src:.bs.js -runtime /Users/mando/Github/vector-benchmark/node_modules/@rescript/std -o ImmutableJs-BenchmarkBs.cmj %{inputs})))
+ (progn (dynamic-run bsb_helper -bs-ns MelangeParcelBenchmark -root /Users/mando/Github/vector-benchmark -cwd ./src %{ast_deps}) (run bsc -bs-ns MelangeParcelBenchmark -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/reason-react/src -I ../node_modules/reason-react/src/legacy -I ../node_modules/rescript-vector/src -I ../node_modules/bisect_ppx/.melange.eobjs -I ../node_modules/bisect_ppx/src/runtime/bucklescript -I ../node_modules/bisect_ppx/src/common   -w a -bs-package-name melange-parcel-benchmark -bs-package-output commonjs:./src:.bs.js -o ImmutableJs-MelangeParcelBenchmark.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  
 (alias (name bsb_world)(deps  ImmutableJs.bs.js BenchmarkJs.bs.js Suites.bs.js Router.bs.js Pages.bs.js Index.bs.js Mori.bs.js App.bs.js)
 (enabled_if (= %{ocaml_version} "4.12.0"))))
 
 (subdir ./.melange.eobjs(rule
-(targets  BenchmarkBs.cmi)
- (deps (:inputs  BenchmarkBs.mlmap) )
+(targets  MelangeParcelBenchmark.cmi)
+ (deps (:inputs  MelangeParcelBenchmark.mlmap) )
 (action (run bsc -w -49 -color always -no-alias-deps %{inputs}))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  )
