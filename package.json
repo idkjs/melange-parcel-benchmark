@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esy bsb -make-world",
+    "build": "rm -rf .parcel-cache dist && esy bsb -make-world",
     "re:watch": "esy bsb -make-world -w",
     "re:clean": "esy bsb -clean-world",
     "dev": "parcel src/index.html",
@@ -26,7 +26,6 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "dependencies": {
-    "@rescript/std": "^9.1.0",
     "esbuild": "^0.11.18",
     "esy": "^0.6.10",
     "immutable": "^4.0.0-rc.12",
